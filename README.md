@@ -19,7 +19,7 @@ The main focus of the project is implementing **proper Git workflow, branching s
 ## Live Deployment
 
 🔗 **Live URL:**
-[https://sewwandi999.github.io/portfolio-devops-assignment/](https://sewwandi999.github.io/portfolio-devops-assignment/)
+https://sewwandi999.github.io/portfolio-devops-assignment/
 
 ---
 
