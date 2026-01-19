@@ -1,15 +1,20 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+name: Deploy to Production
 
-function openCart() {
-  document.getElementById("cart-drawer").classList.add("open");
-}
+on:
+  push:
+    branches: [ main ]
 
-function addToCart(product) {
-  cart.push(product);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  document.getElementById("cart-count").innerText = cart.length;
-}
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
-function goToCheckout() {
-  window.location.href = "checkout.html";
-}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.ORG_ID }}
+          vercel-project-id: ${{ secrets.PROJECT_ID }}
